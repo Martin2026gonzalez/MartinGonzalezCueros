@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Martín Gonzáles Marroquinería & Calzado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --verde: #3B5E3A;
+      --verde-oscuro: #2C4A2B;
+      --verde-claro: #4a7349;
+      --dorado: #C9A84C;
+      --dorado-claro: #dfc06a;
+      --cuero: #8B5E3C;
+      --cuero-claro: #a97444;
+      --crema: #F5EFE6;
+      --crema-oscuro: #ede3d5;
+      --blanco: #FAFAF7;
+      --texto-oscuro: #1a1a18;
+      --texto-medio: #3d3d38;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--verde-oscuro);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      text-decoration: none;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.6);
+      letter-spacing: 0.2em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-back {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      color: var(--dorado-claro);
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.45rem 1rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-back:hover { border-color: var(--dorado); color: var(--dorado); }
+
+    /* HERO BANNER */
+    .page-hero {
+      background: linear-gradient(135deg, #2C4A2B 0%, #3B5E3A 60%, #213521 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 4px solid;
+      border-image: linear-gradient(to right, var(--verde-oscuro), var(--dorado), var(--cuero), var(--dorado), var(--verde-oscuro)) 1;
+    }
+
+    .page-hero-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-hero p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(245,239,230,0.7);
+      letter-spacing: 0.1em;
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .legal-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .legal-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--texto-medio);
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .legal-section ul li {
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .legal-section ul li::before {
+      content: '✦';
+      color: var(--dorado);
+      font-size: 0.55rem;
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+    }
+
+    .legal-section strong {
+      color: var(--verde-oscuro);
+      font-weight: 500;
+    }
+
+    .info-box {
+      background: var(--blanco);
+      border: 1px solid var(--crema-oscuro);
+      border-left: 4px solid var(--dorado);
+      padding: 1.5rem 1.5rem 1.5rem 1.8rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .info-box p {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      color: var(--texto-medio);
+      font-weight: 300;
+    }
+
+    .info-box strong { color: var(--verde-oscuro); font-weight: 500; }
+
+    .update-date {
+      font-size: 0.8rem;
+      color: var(--cuero);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111f18;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--dorado);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.4);
+      letter-spacing: 0.2em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(245,239,230,0.3);
+      letter-spacing: 0.1em;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      .page-hero { padding: 3rem 1.2rem; }
+      .content-wrap { padding: 2.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="Index.html" class="nav-logo">
+      Martín Gonzáles
+      <span>Marroquinería & Calzado</span>
+    </a>
+    <a href="Index.html" class="nav-back">← Volver</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-label">✦ Información legal</p>
+    <h1>Política de Privacidad</h1>
+    <p>Ley 25.326 de Protección de Datos Personales — Argentina</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <p class="update-date">Última actualización: Abril de 2025</p>
+
+    <div class="legal-section">
+      <h2>Responsable del tratamiento</h2>
+      <div class="info-box">
+        <p><strong>Titular:</strong> Martín Gonzáles</p>
+        <p><strong>CUIL:</strong> 20-34204634-8</p>
+        <p><strong>Domicilio:</strong> San Antonio norte 812, Gualeguay, Entre Ríos, Argentina</p>
+        <p><strong>Email:</strong> mg672687@gmail.com</p>
+        <p><strong>WhatsApp:</strong> 3444 15-448189</p>
+      </div>
+      <p>En cumplimiento de la Ley 25.326 de Protección de Datos Personales de la República Argentina y su Decreto Reglamentario 1558/2001, Martín Gonzáles informa sobre la política de privacidad aplicable a los datos personales recabados a través de este sitio web y los canales de comunicación asociados.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Datos recopilados</h2>
+      <p>A través de nuestros canales de contacto (WhatsApp, email y formularios del sitio), podemos recopilar los siguientes datos personales:</p>
+      <ul>
+        <li>Nombre y apellido</li>
+        <li>Dirección de correo electrónico</li>
+        <li>Número de teléfono / WhatsApp</li>
+        <li>Dirección de envío (para la gestión de pedidos y despachos)</li>
+        <li>Información sobre los productos consultados o adquiridos</li>
+      </ul>
+      <p>No se recopilan datos sensibles según la definición del Art. 2 de la Ley 25.326.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Finalidad del tratamiento</h2>
+      <p>Los datos personales recabados son utilizados exclusivamente para las siguientes finalidades:</p>
+      <ul>
+        <li>Gestión y seguimiento de consultas y pedidos</li>
+        <li>Comunicación comercial relacionada con nuestros productos y servicios</li>
+        <li>Coordinación de envíos y entregas</li>
+        <li>Atención al cliente y resolución de consultas post-venta</li>
+        <li>Cumplimiento de obligaciones legales</li>
+      </ul>
+      <p>Los datos <strong>no serán cedidos ni transferidos a terceros</strong> sin el consentimiento expreso del titular, salvo obligación legal o necesidad para la prestación del servicio (empresas de logística para envíos).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Base legal del tratamiento</h2>
+      <p>El tratamiento de datos personales se realiza bajo las siguientes bases legales:</p>
+      <ul>
+        <li>Consentimiento del titular al iniciar una consulta o realizar un pedido</li>
+        <li>Ejecución de una relación contractual (compraventa de productos)</li>
+        <li>Cumplimiento de obligaciones legales aplicables (Ley 24.240, normativa impositiva)</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>Plazo de conservación</h2>
+      <p>Los datos personales se conservarán por un plazo máximo de <strong>5 (cinco) años</strong> desde la última interacción con el titular, o hasta que el titular solicite su supresión, lo que ocurra primero. Este plazo se establece en cumplimiento de las obligaciones legales de conservación de documentación comercial.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Seguridad de los datos</h2>
+      <p>Se adoptan las medidas técnicas y organizativas necesarias para proteger los datos personales contra pérdida, acceso no autorizado, divulgación, alteración o destrucción. Las comunicaciones se realizan a través de plataformas con protocolos de seguridad estándar de la industria (WhatsApp, Gmail).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Derechos ARCO</h2>
+      <p>En cumplimiento del Art. 14 y siguientes de la Ley 25.326, el titular de los datos tiene derecho a:</p>
+      <ul>
+        <li><strong>Acceso:</strong> solicitar información sobre los datos personales que obren en nuestros registros</li>
+        <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos</li>
+        <li><strong>Cancelación:</strong> solicitar la supresión de sus datos personales</li>
+        <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos para determinadas finalidades</li>
+      </ul>
+      <p>Para ejercer estos derechos, puede comunicarse por email a <strong>mg672687@gmail.com</strong> o por WhatsApp al <strong>3444 15-448189</strong>, indicando su nombre completo y el derecho que desea ejercer. La respuesta se brindará dentro de los plazos establecidos por la normativa vigente.</p>
+      <p>Asimismo, tiene derecho a presentar una reclamación ante la <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, autoridad de control en materia de protección de datos personales en Argentina.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Modificaciones</h2>
+      <p>Esta Política de Privacidad puede ser actualizada periódicamente. Las modificaciones serán publicadas en esta misma página con la fecha de última actualización. Se recomienda consultarla regularmente.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      Martín Gonzáles
+      <span>Marroquinería & Calzado · Gualeguay, Entre Ríos</span>
+    </div>
+    <p class="footer-copy">© 2025 Martín Gonzáles Marroquinería & Calzado · CUIL: 20-34204634-8</p>
+  </footer>
+
+</body>
+</html>

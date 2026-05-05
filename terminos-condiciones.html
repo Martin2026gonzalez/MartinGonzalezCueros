@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones — Martín Gonzáles Marroquinería & Calzado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --verde: #3B5E3A;
+      --verde-oscuro: #2C4A2B;
+      --verde-claro: #4a7349;
+      --dorado: #C9A84C;
+      --dorado-claro: #dfc06a;
+      --cuero: #8B5E3C;
+      --cuero-claro: #a97444;
+      --crema: #F5EFE6;
+      --crema-oscuro: #ede3d5;
+      --blanco: #FAFAF7;
+      --texto-oscuro: #1a1a18;
+      --texto-medio: #3d3d38;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: var(--verde-oscuro);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      text-decoration: none;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.6);
+      letter-spacing: 0.2em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-back {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      color: var(--dorado-claro);
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.45rem 1rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-back:hover { border-color: var(--dorado); color: var(--dorado); }
+
+    .page-hero {
+      background: linear-gradient(135deg, #2C4A2B 0%, #3B5E3A 60%, #213521 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 4px solid;
+      border-image: linear-gradient(to right, var(--verde-oscuro), var(--dorado), var(--cuero), var(--dorado), var(--verde-oscuro)) 1;
+    }
+
+    .page-hero-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-hero p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(245,239,230,0.7);
+      letter-spacing: 0.1em;
+    }
+
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .legal-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .legal-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--texto-medio);
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .legal-section ul li {
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .legal-section ul li::before {
+      content: '✦';
+      color: var(--dorado);
+      font-size: 0.55rem;
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+    }
+
+    .legal-section strong {
+      color: var(--verde-oscuro);
+      font-weight: 500;
+    }
+
+    .info-box {
+      background: var(--blanco);
+      border: 1px solid var(--crema-oscuro);
+      border-left: 4px solid var(--dorado);
+      padding: 1.5rem 1.5rem 1.5rem 1.8rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .info-box p {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      color: var(--texto-medio);
+      font-weight: 300;
+    }
+
+    .info-box strong { color: var(--verde-oscuro); font-weight: 500; }
+
+    .highlight-box {
+      background: rgba(44, 74, 43, 0.06);
+      border: 1px solid rgba(44, 74, 43, 0.15);
+      border-radius: 6px;
+      padding: 1.2rem 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--verde-oscuro);
+      font-weight: 400;
+    }
+
+    .update-date {
+      font-size: 0.8rem;
+      color: var(--cuero);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    footer {
+      background: #111f18;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--dorado);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.4);
+      letter-spacing: 0.2em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(245,239,230,0.3);
+      letter-spacing: 0.1em;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      .page-hero { padding: 3rem 1.2rem; }
+      .content-wrap { padding: 2.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="Index.html" class="nav-logo">
+      Martín Gonzáles
+      <span>Marroquinería & Calzado</span>
+    </a>
+    <a href="Index.html" class="nav-back">← Volver</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-label">✦ Información legal</p>
+    <h1>Términos y Condiciones</h1>
+    <p>Ley 24.240 de Defensa del Consumidor — Argentina</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <p class="update-date">Última actualización: Abril de 2025</p>
+
+    <div class="legal-section">
+      <h2>Datos del titular</h2>
+      <div class="info-box">
+        <p><strong>Titular:</strong> Martín Gonzáles</p>
+        <p><strong>CUIL:</strong> 20-34204634-8</p>
+        <p><strong>Domicilio:</strong> San Antonio norte 812, Gualeguay, Entre Ríos, Argentina</p>
+        <p><strong>Email:</strong> mg672687@gmail.com</p>
+        <p><strong>WhatsApp:</strong> 3444 15-448189</p>
+        <p><strong>Jurisdicción:</strong> Gualeguay, Entre Ríos, Argentina</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>Objeto</h2>
+      <p>Los presentes Términos y Condiciones regulan la relación comercial entre Martín Gonzáles (en adelante "el Vendedor") y las personas que realizan consultas o adquieren productos a través de los canales habilitados (en adelante "el Consumidor").</p>
+      <p>El Vendedor se dedica a la <strong>fabricación y venta de productos artesanales de marroquinería y calzado</strong>, incluyendo botas, botines, carteras, cintos, bandoleras, billeteras y accesorios en cuero vacuno legítimo de primera calidad, con domicilio en Gualeguay, Entre Ríos.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Proceso de consulta y compra</h2>
+      <p>Todos los pedidos y consultas se gestionan a través de los siguientes canales:</p>
+      <ul>
+        <li>WhatsApp: 3444 15-448189</li>
+        <li>Email: mg672687@gmail.com</li>
+      </ul>
+      <p>El proceso de compra comienza con la consulta del Consumidor, seguida de la confirmación de disponibilidad, precio y características del producto. La compra queda confirmada una vez acordados los términos y abonada la seña o el total según lo convenido.</p>
+      <p>Al tratarse de productos <strong>artesanales y fabricados a pedido</strong>, los plazos de entrega se acordarán individualmente con cada cliente según la carga de trabajo del taller.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Precios</h2>
+      <p>Los precios publicados en el sitio web están expresados en <strong>pesos argentinos ($)</strong> y son de carácter orientativo. Pueden variar sin previo aviso hasta el momento de la confirmación formal del pedido por parte del Vendedor.</p>
+      <p>El precio final será el acordado expresamente con el Consumidor al momento de confirmar el pedido vía WhatsApp o email. Los precios no incluyen el costo de envío, salvo que se indique expresamente lo contrario.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Formas de pago</h2>
+      <p>Se aceptan las siguientes modalidades de pago:</p>
+      <ul>
+        <li>Efectivo al contado (pago presencial en el local)</li>
+        <li>Transferencia bancaria</li>
+        <li>Pagos por Alias (CBU/CVU)</li>
+      </ul>
+      <p>En caso de requerirse seña para iniciar la fabricación de un pedido a medida, se informará el monto y modalidad al momento de la confirmación del pedido.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Envíos</h2>
+      <p>Los envíos están <strong>a cargo del comprador</strong>. El Vendedor no se responsabiliza por demoras, extravíos o daños ocasionados por las empresas de logística.</p>
+      <p>Las empresas de transporte habilitadas para el despacho son:</p>
+      <ul>
+        <li>Vía Cargo</li>
+        <li>Andreani</li>
+        <li>Flecha Bus</li>
+        <li>Buspack</li>
+      </ul>
+      <p>El costo y plazo de envío dependerá de la empresa elegida, el destino y el peso del paquete. El Consumidor podrá coordinar el envío directamente o solicitarle al Vendedor que lo gestione en su nombre.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Productos artesanales</h2>
+      <p>Todos los productos son <strong>fabricados artesanalmente con cuero vacuno legítimo de primera calidad</strong>. Al tratarse de materiales naturales, pueden existir variaciones de tono, textura o veta entre distintas piezas, lo cual es inherente a la naturaleza del cuero genuino y no constituye un defecto.</p>
+      <p>Los productos fabricados a medida o bajo pedido específico no admiten devolución por cambio de opinión, salvo defectos de fabricación comprobables.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Derecho de arrepentimiento</h2>
+      <div class="highlight-box">
+        <p>Conforme al Art. 34 de la Ley 24.240 de Defensa del Consumidor, el Consumidor tiene derecho a revocar la aceptación de la oferta dentro de los <strong>10 (diez) días corridos</strong> contados desde la fecha en que se entregue el bien.</p>
+      </div>
+      <p>Para ejercer este derecho, el Consumidor deberá:</p>
+      <ul>
+        <li>Comunicarse dentro del plazo establecido por WhatsApp (3444 15-448189) o email (mg672687@gmail.com)</li>
+        <li>Indicar nombre completo, producto, fecha de compra y motivo</li>
+        <li>El producto debe encontrarse sin uso y en condiciones originales</li>
+      </ul>
+      <p>El reintegro del importe abonado se realizará por el mismo medio de pago utilizado, dentro de los 10 días hábiles siguientes a la recepción del producto devuelto en conformidad.</p>
+      <p>Para mayor información sobre el ejercicio de este derecho, consulte la sección <a href="boton-arrepentimiento.html" style="color:var(--cuero);">Botón de Arrepentimiento</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Garantía y defectos de fabricación</h2>
+      <p>Los productos cuentan con garantía contra defectos de fabricación comprobables. En caso de detectar un defecto, el Consumidor deberá comunicarse dentro de los <strong>30 (treinta) días</strong> corridos desde la recepción del producto, aportando fotografías o evidencia del defecto.</p>
+      <p>No están cubiertos por garantía los daños ocasionados por uso inadecuado, exposición prolongada al agua, mal almacenamiento o desgaste natural del material.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Jurisdicción y legislación aplicable</h2>
+      <p>Las presentes condiciones se rigen por la legislación vigente de la <strong>República Argentina</strong>, en particular:</p>
+      <ul>
+        <li>Ley 24.240 de Defensa del Consumidor y sus modificatorias</li>
+        <li>Ley 25.326 de Protección de Datos Personales</li>
+        <li>Código Civil y Comercial de la Nación</li>
+      </ul>
+      <p>Ante cualquier controversia, las partes se someten a la jurisdicción de los tribunales ordinarios de la ciudad de <strong>Gualeguay, Entre Ríos, Argentina</strong>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Contacto y atención al cliente</h2>
+      <p>Para consultas, reclamos o cualquier comunicación relacionada con estos Términos y Condiciones, el Consumidor puede contactarse a través de:</p>
+      <ul>
+        <li>WhatsApp: 3444 15-448189</li>
+        <li>Email: mg672687@gmail.com</li>
+        <li>Dirección: San Antonio norte 812, Gualeguay, Entre Ríos</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      Martín Gonzáles
+      <span>Marroquinería & Calzado · Gualeguay, Entre Ríos</span>
+    </div>
+    <p class="footer-copy">© 2025 Martín Gonzáles Marroquinería & Calzado · CUIL: 20-34204634-8</p>
+  </footer>
+
+</body>
+</html>

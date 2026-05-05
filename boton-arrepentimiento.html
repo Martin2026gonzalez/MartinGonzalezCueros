@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botón de Arrepentimiento — Martín Gonzáles Marroquinería & Calzado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --verde: #3B5E3A;
+      --verde-oscuro: #2C4A2B;
+      --verde-claro: #4a7349;
+      --dorado: #C9A84C;
+      --dorado-claro: #dfc06a;
+      --cuero: #8B5E3C;
+      --cuero-claro: #a97444;
+      --crema: #F5EFE6;
+      --crema-oscuro: #ede3d5;
+      --blanco: #FAFAF7;
+      --texto-oscuro: #1a1a18;
+      --texto-medio: #3d3d38;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: var(--verde-oscuro);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      text-decoration: none;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.6);
+      letter-spacing: 0.2em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-back {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      color: var(--dorado-claro);
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.45rem 1rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-back:hover { border-color: var(--dorado); color: var(--dorado); }
+
+    .page-hero {
+      background: linear-gradient(135deg, #2C4A2B 0%, #3B5E3A 60%, #213521 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 4px solid;
+      border-image: linear-gradient(to right, var(--verde-oscuro), var(--dorado), var(--cuero), var(--dorado), var(--verde-oscuro)) 1;
+    }
+
+    .page-hero-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: rgba(245,239,230,0.75);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+
+    .page-hero p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: rgba(245,239,230,0.55);
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+    }
+
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    /* ALERT BOX */
+    .alert-box {
+      background: var(--verde-oscuro);
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .alert-box .alert-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--dorado);
+      line-height: 1;
+      display: block;
+    }
+
+    .alert-box .alert-label {
+      font-size: 0.75rem;
+      color: rgba(245,239,230,0.7);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    .alert-box .alert-text {
+      color: rgba(245,239,230,0.85);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .alert-box .alert-text strong {
+      color: var(--dorado);
+      font-weight: 500;
+    }
+
+    /* CONTACT BUTTONS */
+    .contact-buttons {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25D366;
+      color: white;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+      flex: 1;
+      justify-content: center;
+    }
+    .btn-wa:hover { background: #1ebe5b; transform: translateY(-1px); }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--verde-oscuro);
+      color: var(--crema);
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.15s;
+      flex: 1;
+      justify-content: center;
+    }
+    .btn-email:hover { background: var(--verde-claro); transform: translateY(-1px); }
+
+    /* LEGAL SECTIONS */
+    .legal-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .legal-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--texto-medio);
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .legal-section ul li {
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .legal-section ul li::before {
+      content: '✦';
+      color: var(--dorado);
+      font-size: 0.55rem;
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+    }
+
+    .legal-section strong {
+      color: var(--verde-oscuro);
+      font-weight: 500;
+    }
+
+    .divider-line {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--dorado), transparent);
+      margin: 3rem 0;
+      opacity: 0.4;
+    }
+
+    /* FORM */
+    .form-section {
+      background: var(--blanco);
+      border: 1px solid var(--crema-oscuro);
+      border-top: 4px solid var(--dorado);
+      border-radius: 0 0 8px 8px;
+      padding: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      font-size: 0.85rem;
+      color: var(--texto-medio);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--texto-medio);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--crema-oscuro);
+      border-radius: 6px;
+      background: var(--crema);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      color: var(--texto-oscuro);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--dorado);
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-submit {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-submit-wa {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit-wa:hover { background: #1ebe5b; transform: translateY(-1px); }
+
+    .btn-submit-email {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      background: var(--verde-oscuro);
+      color: var(--crema);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit-email:hover { background: var(--verde-claro); transform: translateY(-1px); }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--texto-medio);
+      opacity: 0.7;
+      margin-top: 1rem;
+      font-weight: 300;
+    }
+
+    footer {
+      background: #111f18;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--dorado);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.4);
+      letter-spacing: 0.2em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(245,239,230,0.3);
+      letter-spacing: 0.1em;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      .page-hero { padding: 3rem 1.2rem; }
+      .content-wrap { padding: 2.5rem 1.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-section { padding: 1.5rem; }
+      .contact-buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="Index.html" class="nav-logo">
+      Martín Gonzáles
+      <span>Marroquinería & Calzado</span>
+    </a>
+    <a href="Index.html" class="nav-back">← Volver</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-label">✦ Defensa del consumidor</p>
+    <h1>Botón de Arrepentimiento</h1>
+    <h2>Revocación de Aceptación de Oferta</h2>
+    <p>Art. 34 — Ley 24.240 de Defensa del Consumidor</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <span class="alert-num">10</span>
+      <span class="alert-label">días corridos para ejercer este derecho</span>
+      <p class="alert-text">
+        Conforme al <strong>Art. 34 de la Ley 24.240</strong>, tenés derecho a revocar la aceptación de la oferta dentro de los <strong>10 días corridos</strong> desde que recibiste el producto, sin necesidad de invocar causa alguna y sin costo a tu cargo.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Cómo ejercer tu derecho</h2>
+      <p>Para revocar tu compra, comunicate con nosotros dentro del plazo establecido por alguno de los siguientes medios:</p>
+      <div class="contact-buttons">
+        <a href="https://wa.me/549344415448189?text=Hola%20Mart%C3%ADn%2C%20quiero%20ejercer%20mi%20derecho%20de%20arrepentimiento%20sobre%20una%20compra." target="_blank" class="btn-wa">
+          <svg viewBox="0 0 24 24" fill="white" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp: 3444 15-448189
+        </a>
+        <a href="mailto:mg672687@gmail.com?subject=Solicitud%20de%20arrepentimiento%20de%20compra" class="btn-email">
+          ✉ Email: mg672687@gmail.com
+        </a>
+      </div>
+      <p>Al comunicarte, indicá la siguiente información:</p>
+      <ul>
+        <li>Nombre completo</li>
+        <li>Producto adquirido</li>
+        <li>Fecha de compra y/o recepción</li>
+        <li>Motivo (opcional, no es obligatorio indicarlo)</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>Condiciones para la devolución</h2>
+      <ul>
+        <li>El producto debe encontrarse <strong>sin uso</strong> y en condiciones originales</li>
+        <li>Debe conservar su embalaje y accesorios originales, de corresponder</li>
+        <li>La solicitud debe realizarse dentro del plazo de 10 días corridos desde la recepción</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>Reintegro del pago</h2>
+      <p>Una vez recibido el producto devuelto en conformidad, el reintegro del importe abonado se realizará:</p>
+      <ul>
+        <li>Por el <strong>mismo medio de pago</strong> utilizado al momento de la compra</li>
+        <li>Dentro de los <strong>10 días hábiles</strong> siguientes a la recepción del producto</li>
+      </ul>
+      <p>Los gastos de envío de la devolución están a cargo del Consumidor.</p>
+    </div>
+
+    <div class="divider-line"></div>
+
+    <!-- FORMULARIO -->
+    <div class="form-section" id="formulario">
+      <h3 class="form-title">Formulario de solicitud</h3>
+      <p class="form-subtitle">Completá el formulario y elegí cómo enviarlo. Te contactaremos para gestionar la devolución.</p>
+
+      <form id="revocacionForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp *</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3444 15-123456" required />
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de compra *</label>
+            <input type="date" id="fecha" name="fecha" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="producto">Producto adquirido *</label>
+          <input type="text" id="producto" name="producto" placeholder="Ej: Botas de campo, talle 42, color negro" required />
+        </div>
+
+        <div class="form-group">
+          <label for="motivo">Motivo de la solicitud (opcional)</label>
+          <textarea id="motivo" name="motivo" placeholder="Podés indicar el motivo o dejarlo en blanco. No es obligatorio."></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="button" class="btn-submit-wa" onclick="enviarPorWhatsApp()">
+            <svg viewBox="0 0 24 24" fill="white" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Enviar por WhatsApp
+          </button>
+          <button type="button" class="btn-submit-email" onclick="enviarPorEmail()">
+            ✉ Enviar por Email
+          </button>
+        </div>
+
+        <p class="form-note">* Campos obligatorios. Al enviar este formulario ejercés formalmente tu derecho de arrepentimiento conforme al Art. 34 de la Ley 24.240.</p>
+      </form>
+    </div>
+
+    <div class="legal-section" style="margin-top: 3rem;">
+      <h2>Base legal</h2>
+      <p>Este mecanismo está establecido por el <strong>Art. 34 de la Ley 24.240 de Defensa del Consumidor</strong> y la <strong>Resolución 424/2020 de la Secretaría de Comercio Interior</strong>.</p>
+      <p>El derecho de revocación aplica a compras realizadas fuera del establecimiento comercial o a distancia (vía WhatsApp, redes sociales, email u otros medios remotos).</p>
+      <p>Responsable: <strong>Martín Gonzáles</strong> — CUIL: 20-34204634-8 — San Antonio norte 812, Gualeguay, Entre Ríos.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      Martín Gonzáles
+      <span>Marroquinería & Calzado · Gualeguay, Entre Ríos</span>
+    </div>
+    <p class="footer-copy">© 2025 Martín Gonzáles Marroquinería & Calzado · CUIL: 20-34204634-8</p>
+  </footer>
+
+  <script>
+    function obtenerDatosFormulario() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const fecha = document.getElementById('fecha').value;
+      const producto = document.getElementById('producto').value.trim();
+      const motivo = document.getElementById('motivo').value.trim();
+
+      if (!nombre || !email || !telefono || !fecha || !producto) {
+        alert('Por favor completá todos los campos obligatorios (*) antes de enviar.');
+        return null;
+      }
+
+      return { nombre, email, telefono, fecha, producto, motivo };
+    }
+
+    function enviarPorWhatsApp() {
+      const datos = obtenerDatosFormulario();
+      if (!datos) return;
+
+      let msg = `Solicitud de Arrepentimiento (Art. 34 Ley 24.240)\n\n`;
+      msg += `Nombre: ${datos.nombre}\n`;
+      msg += `Email: ${datos.email}\n`;
+      msg += `Teléfono: ${datos.telefono}\n`;
+      msg += `Producto: ${datos.producto}\n`;
+      msg += `Fecha de compra: ${datos.fecha}\n`;
+      if (datos.motivo) msg += `Motivo: ${datos.motivo}\n`;
+
+      const url = `https://wa.me/549344415448189?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+
+    function enviarPorEmail() {
+      const datos = obtenerDatosFormulario();
+      if (!datos) return;
+
+      const asunto = `Solicitud de Arrepentimiento - ${datos.nombre}`;
+      let cuerpo = `Solicitud de Revocación de Compra (Art. 34 Ley 24.240)\n\n`;
+      cuerpo += `Nombre: ${datos.nombre}\n`;
+      cuerpo += `Email: ${datos.email}\n`;
+      cuerpo += `Teléfono: ${datos.telefono}\n`;
+      cuerpo += `Producto: ${datos.producto}\n`;
+      cuerpo += `Fecha de compra: ${datos.fecha}\n`;
+      if (datos.motivo) cuerpo += `Motivo: ${datos.motivo}\n`;
+
+      const url = `mailto:mg672687@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
