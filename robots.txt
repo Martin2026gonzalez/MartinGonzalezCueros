@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://martingonzalezcueros.com.ar/sitemap.xml

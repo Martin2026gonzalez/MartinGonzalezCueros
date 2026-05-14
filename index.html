@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Martin Gonzalez — Marroquinería & Calzado | Gualeguay, Entre Ríos</title>
+
+  <!-- SEO: Meta Description & Keywords -->
+  <meta name="description" content="Marroquinería y calzado artesanal en Gualeguay, Entre Ríos. Martín González fabrica y repara carteras, cinturones, zapatos y artículos de cuero a medida. Atención personalizada, calidad artesanal. Visitanos en San Antonio Norte 812." />
+  <meta name="keywords" content="marroquinería Gualeguay, calzado artesanal Gualeguay, cuero Gualeguay, reparación calzado Entre Ríos, carteras cuero artesanal, cinturones cuero, zapatería Gualeguay, artesanía cuero Entre Ríos, Martín González marroquinería" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Martín González — Marroquinería & Calzado Artesanal | Gualeguay" />
+  <meta property="og:description" content="Fabricación y reparación de artículos de cuero artesanal en Gualeguay, Entre Ríos. Carteras, calzado, cinturones y más, hechos a mano con la mejor calidad." />
+  <meta property="og:image" content="https://martingonzalezcueros.com.ar/imagenes/og-preview.jpg" />
+  <meta property="og:url" content="https://martingonzalezcueros.com.ar/" />
+
+  <!-- SEO: Geolocalización -->
+  <meta name="geo.placename" content="Gualeguay, Entre Ríos, Argentina" />
+  <meta name="geo.region" content="AR-E" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --verde: #3B5E3A;
+      --verde-oscuro: #2C4A2B;
+      --verde-claro: #4a7349;
+      --dorado: #C9A84C;
+      --dorado-claro: #dfc06a;
+      --cuero: #8B5E3C;
+      --cuero-claro: #a97444;
+      --crema: #F5EFE6;
+      --crema-oscuro: #ede3d5;
+      --blanco: #FAFAF7;
+      --texto-oscuro: #1a1a18;
+      --texto-medio: #3d3d38;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      overflow-x: hidden;
+    }
+
+    /* ---- NOISE TEXTURE OVERLAY ---- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.5;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background: rgba(44, 74, 43, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      transition: padding 0.3s;
+    }
+
+    .nav-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--crema);
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--verde-oscuro);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--crema);
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--dorado); }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dorado);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: var(--crema);
+      letter-spacing: 0.25em;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--crema);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 400;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--dorado); }
+
+    .nav-cta {
+      background: var(--dorado);
+      color: var(--verde-oscuro) !important;
+      padding: 0.5rem 1.2rem !important;
+      font-weight: 500 !important;
+      opacity: 1 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--dorado-claro) !important; }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      background: var(--verde-oscuro);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(139,94,60,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        linear-gradient(135deg, #2C4A2B 0%, #3B5E3A 50%, #213521 100%);
+    }
+
+    /* Decorative lines */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 55%;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.25), transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 8rem 2rem 4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .hero-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(5rem, 11vw, 10rem);
+      color: #ffffff;
+      line-height: 0.95;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s forwards;
+      text-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      color: var(--dorado);
+      font-style: normal;
+    }
+
+    .hero-title .hero-highlight {
+      display: block;
+      margin-top: 0.75rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.65s forwards;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.9;
+      max-width: 540px;
+      margin-bottom: 3rem;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+
+    .btn-primary {
+      background: var(--dorado);
+      color: var(--verde-oscuro);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--dorado-claro); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid rgba(245,239,230,0.4);
+      color: var(--crema);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, background 0.25s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--dorado); background: rgba(201,168,76,0.08); }
+
+    /* Decorative corner element */
+    .hero-deco {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 1.2s 1.2s forwards;
+      flex-shrink: 0;
+    }
+
+    .hero-deco-circle {
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-deco-circle::before {
+      content: '';
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 50%;
+    }
+
+    .hero-deco-inner {
+      text-align: center;
+      color: var(--dorado);
+    }
+
+    .hero-deco-inner .big-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .hero-deco-inner .deco-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,239,230,0.5);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    /* ---- DIVIDER ---- */
+    .divider {
+      height: 4px;
+      background: linear-gradient(to right, var(--verde-oscuro), var(--dorado), var(--cuero), var(--dorado), var(--verde-oscuro));
+    }
+
+    /* ---- SECTION BASE ---- */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; width: 100%; }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--cuero);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--verde-oscuro);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { color: var(--cuero); font-style: italic; }
+
+    /* ---- NOSOTROS ---- */
+    #nosotros {
+      background: var(--blanco);
+    }
+    .nosotros-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .nosotros-text p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--texto-medio);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    .nosotros-text p strong {
+      color: var(--verde-oscuro);
+      font-weight: 500;
+    }
+
+    .nosotros-visual {
+      position: relative;
+    }
+
+    .nosotros-card {
+      background: var(--verde-oscuro);
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nosotros-card::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 180px; height: 180px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+    }
+
+    .nosotros-card::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: -20px;
+      width: 120px; height: 120px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 50%;
+    }
+
+    .nosotros-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--crema);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nosotros-quote::before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--dorado);
+      opacity: 0.3;
+      position: absolute;
+      top: -1.5rem;
+      left: -0.5rem;
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .nosotros-attr {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-item {
+      flex: 1;
+      border-left: 2px solid var(--dorado);
+      padding-left: 1rem;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--verde-oscuro);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--cuero);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    /* ---- PRODUCTOS ---- */
+    #productos {
+      background: var(--crema-oscuro);
+    }
+
+    .productos-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+      grid-auto-rows: 1fr;
+    }
+
+    .producto-card {
+      background: var(--blanco);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .producto-card:hover { transform: translateY(-6px); }
+
+    .producto-card:nth-child(1) { grid-row: auto; }
+
+    .producto-img {
+      width: 100%;
+      min-height: 280px;
+      background: var(--verde-oscuro);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .producto-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      min-height: 100%;
+    }
+
+    .producto-icon {
+      font-size: 4rem;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+      transition: transform 0.4s;
+    }
+
+    .producto-card:hover .producto-icon { transform: scale(1.1) rotate(-5deg); }
+
+    .producto-img-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+    }
+
+    .bg-1 { background: radial-gradient(circle at 60% 40%, var(--cuero), transparent 60%); }
+    .bg-2 { background: radial-gradient(circle at 40% 60%, var(--dorado), transparent 60%); }
+    .bg-3 { background: radial-gradient(circle at 50% 50%, var(--cuero-claro), transparent 60%); }
+    .bg-4 { background: radial-gradient(circle at 30% 70%, var(--dorado), transparent 60%); }
+    .bg-5 { background: radial-gradient(circle at 70% 30%, var(--cuero), transparent 60%); }
+    .bg-6 { background: radial-gradient(circle at 50% 60%, var(--dorado-claro), transparent 60%); }
+
+    .producto-info {
+      padding: 1.5rem;
+      border-top: 2px solid var(--dorado);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .producto-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.4rem;
+    }
+
+    .producto-desc {
+      font-size: 0.8rem;
+      color: var(--texto-medio);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .producto-tag {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cuero);
+      border: 1px solid var(--cuero);
+      padding: 0.2rem 0.6rem;
+    }
+
+    /* ---- CONSULTAR BUTTON ---- */
+    .producto-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--crema-oscuro);
+    }
+
+    .btn-consultar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--verde-oscuro);
+      color: var(--crema);
+      padding: 0.55rem 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-consultar:hover { background: var(--verde-claro); transform: translateY(-1px); }
+    .btn-consultar svg { width: 14px; height: 14px; fill: #25D366; flex-shrink: 0; }
+
+    .selector-genero { display: flex; gap: 6px; margin-bottom: 0.5rem; }
+    .btn-genero {
+      padding: 0.3rem 0.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--cuero);
+      background: transparent;
+      color: var(--cuero);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-genero.activo { background: var(--verde-oscuro); color: var(--crema); border-color: var(--verde-oscuro); }
+    .btn-genero:hover:not(.activo) { background: var(--crema-oscuro); }
+
+    .btn-zoom {
+      width: 34px;
+      height: 34px;
+      background: var(--crema-oscuro);
+      border: 1px solid var(--dorado);
+      color: var(--cuero);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .btn-zoom:hover { background: var(--dorado); color: var(--verde-oscuro); }
+
+    /* ---- LIGHTBOX ---- */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      animation: fadeIn 0.25s ease;
+    }
+    .lightbox-overlay.active { display: flex; }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .lightbox-img {
+      max-height: 75vh;
+      max-width: 100%;
+      object-fit: contain;
+      border: 1px solid rgba(201,168,76,0.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-icon-view {
+      font-size: 8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+    }
+
+    .lightbox-info { text-align: center; }
+
+    .lightbox-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--crema);
+      margin-bottom: 0.3rem;
+    }
+    .lightbox-desc {
+      font-size: 0.8rem;
+      color: rgba(245,239,230,0.55);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .lightbox-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .lightbox-cta:hover { background: #1ebe57; }
+    .lightbox-cta svg { width: 18px; height: 18px; fill: white; }
+
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: 1px solid rgba(245,239,230,0.2);
+      color: var(--crema);
+      width: 36px;
+      height: 36px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .lightbox-close:hover { border-color: var(--dorado); color: var(--dorado); }
+
+    /* ---- REPARACIONES ---- */
+    #reparaciones {
+      background: var(--verde-oscuro);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #reparaciones::before {
+      content: '';
+      position: absolute;
+      right: -100px; top: -100px;
+      width: 400px; height: 400px;
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 50%;
+    }
+
+    #reparaciones::after {
+      content: '';
+      position: absolute;
+      left: -60px; bottom: -60px;
+      width: 250px; height: 250px;
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: 50%;
+    }
+
+    .reparaciones-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reparaciones-text .section-label { color: var(--dorado); }
+    .reparaciones-text .section-title { color: var(--crema); }
+    .reparaciones-text .section-title em { color: var(--dorado); }
+
+    .reparaciones-text p {
+      color: rgba(245,239,230,0.75);
+      line-height: 1.9;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .reparaciones-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .reparaciones-list li {
+      background: rgba(245,239,230,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 1.2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--crema);
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: background 0.2s;
+    }
+
+    .reparaciones-list li:hover { background: rgba(201,168,76,0.1); }
+
+    .reparaciones-list li::before {
+      content: '✦';
+      color: var(--dorado);
+      font-size: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    /* ---- CONTACTO ---- */
+    #contacto {
+      background: var(--crema);
+    }
+    .contacto-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contacto-info p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--texto-medio);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .contacto-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contacto-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contacto-item-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--verde-oscuro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contacto-item-text {
+      padding-top: 0.2rem;
+    }
+
+    .contacto-item-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cuero);
+      margin-bottom: 0.2rem;
+    }
+
+    .contacto-item-val {
+      font-size: 0.95rem;
+      color: var(--texto-oscuro);
+      font-weight: 400;
+    }
+
+    .contacto-map {
+      background: var(--verde-oscuro);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-placeholder {
+      text-align: center;
+      color: var(--crema);
+      z-index: 1;
+    }
+
+    .map-placeholder p {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      margin-top: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .map-placeholder .map-icon { font-size: 3rem; }
+
+    .map-placeholder a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--dorado);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid var(--dorado);
+      padding-bottom: 2px;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: #111f18;
+      padding: 3rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--dorado);
+    }
+
+    .footer-logo span {
+      display: block;
+      font-size: 0.6rem;
+      color: rgba(245,239,230,0.4);
+      letter-spacing: 0.25em;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: rgba(245,239,230,0.4);
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--dorado); }
+
+    .footer-divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(201,168,76,0.25);
+    }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(245,239,230,0.25);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-wb {
+      font-size: 0.65rem;
+      color: rgba(245,239,230,0.2);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-wb a {
+      color: rgba(201,168,76,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-wb a:hover { color: var(--dorado); }
+
+    /* ---- WHATSAPP FLOAT ---- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+    }
+
+    .whatsapp-float a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: pulse 2.5s infinite;
+    }
+
+    .whatsapp-float a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+    }
+
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 1.5rem; }
+      .nosotros-inner, .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .reparaciones-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .productos-grid { grid-template-columns: 1fr 1fr; }
+      .producto-card:nth-child(1) { grid-row: span 1; }
+      .hero-inner { flex-direction: column; padding: 0; }
+      .hero-content { padding: 7rem 1.5rem 3rem; max-width: 100%; }
+      .hero-deco { display: none; }
+      .stats-row { flex-direction: column; }
+      footer { gap: 1.2rem; }
+      .reparaciones-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .producto-img { min-height: 220px; }
+      #img-lightbox img { max-width: 96vw; }
+      nav { padding: 0.9rem 1.2rem; }
+      .nav-logo { font-size: 1.1rem; }
+      .nav-logo span { font-size: 0.5rem; letter-spacing: 0.15em; }
+      section { padding: 3.5rem 1.2rem; }
+      .hero-content { padding: 6rem 1.2rem 2.5rem; max-width: 100%; }
+      .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.2em; }
+      .hero-desc { font-size: 0.9rem; max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 1rem 1.5rem; font-size: 0.75rem; }
+      .productos-grid { grid-template-columns: 1fr; }
+      .producto-card:nth-child(1) { grid-row: span 1; }
+      #nosotros { padding: 3.5rem 1.2rem; }
+      .nosotros-card { padding: 2rem; }
+      .nosotros-quote { font-size: 1.1rem; }
+      .stats-row { gap: 1.2rem; }
+      .section-title { font-size: 1.8rem; }
+      .reparaciones-list { grid-template-columns: 1fr; }
+      .reparaciones-list li { font-size: 0.8rem; padding: 1rem 1.2rem; }
+      #contacto { padding: 3.5rem 1.2rem; }
+      .contacto-item-val { font-size: 0.85rem; word-break: break-word; }
+      .contacto-map { aspect-ratio: 4/3; }
+      footer { padding: 2rem 1.2rem; gap: 1.2rem; }
+      .footer-logo { font-size: 1.1rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      .footer-copy { font-size: 0.65rem; }
+      .whatsapp-float { bottom: 1.2rem; right: 1.2rem; }
+      .whatsapp-float a { width: 54px; height: 54px; }
+    }
+
+    /* CAT SUBTITLE */
+    .cat-subtitle {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--dorado);
+      letter-spacing: 0.15em;
+      margin: 2rem 0 1.5rem;
+    }
+
+    /* PRODUCTO PRICE Y TALLES */
+    .producto-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--verde-oscuro);
+      margin: 0.5rem 0;
+    }
+    .producto-talles {
+      font-size: 0.75rem;
+      color: var(--texto-medio);
+      margin: 0.25rem 0;
+      opacity: 0.8;
+    }
+    .producto-img-placeholder {
+      background: var(--crema-oscuro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      min-height: 180px;
+    }
+
+    /* ---- ENVIOS ---- */
+    #envios { background: var(--blanco); }
+
+    .envios-inner { max-width: 1200px; margin: 0 auto; }
+
+    .envios-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .envios-carriers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .envio-card {
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background: var(--crema);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .envio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(44,74,43,0.1);
+    }
+
+    .envio-logo-wrap {
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .envio-logo {
+      width: 180px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .envio-nombre {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.4rem;
+    }
+
+    .envio-desc {
+      font-size: 0.8rem;
+      color: var(--texto-medio);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .envios-info-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .envios-info-box {
+      border-left: 3px solid var(--dorado);
+      padding: 1.5rem 2rem;
+      background: var(--crema-oscuro);
+    }
+
+    .envios-box-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cuero);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .envios-box-text {
+      font-size: 0.95rem;
+      color: var(--texto-medio);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .envios-box-text strong { color: var(--verde-oscuro); font-weight: 600; }
+
+    /* ---- NOTA CATÁLOGO ---- */
+    .catalogo-nota {
+      margin-top: 3rem;
+      padding: 1.4rem 2rem;
+      border-left: 3px solid var(--dorado);
+      background: var(--crema-oscuro);
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .catalogo-nota p {
+      font-size: 0.88rem;
+      color: var(--texto-medio);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .catalogo-nota p strong { color: var(--verde-oscuro); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .envios-carriers { grid-template-columns: 1fr; }
+      .envios-info-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .envios-carriers { gap: 1.2rem; }
+      .envios-info-box { padding: 1.2rem 1.5rem; }
+      .catalogo-nota { padding: 1.2rem 1.5rem; }
+    }
+
+    /* FOOTER LEGAL */
+    .footer-legal {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0.75rem 0;
+    }
+    .footer-legal a {
+      color: var(--dorado-claro);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: #fff; }
+    .footer-legal span { color: var(--dorado); opacity: 0.5; font-size: 0.8rem; }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--crema);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+      border: 1px solid var(--dorado);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--texto-medio);
+    }
+    .modal-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.25rem;
+    }
+    .modal-producto-nombre {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--cuero);
+      margin-bottom: 1.5rem;
+    }
+    .modal-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--texto-medio);
+      margin-bottom: 0.4rem;
+    }
+    .modal-select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1.5px solid var(--crema-oscuro);
+      border-radius: 8px;
+      background: var(--blanco);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 1rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .modal-select:focus { border-color: var(--dorado); }
+    .modal-btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+    .modal-btn-wa:hover { background: #1ebe5b; transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        Martin Gonzalez
+        <span>Marroquinería & Calzado</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#reparaciones">Reparaciones</a></li>
+        <li><a href="#envios">Envíos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#nosotros" class="mobile-link">Nosotros</a>
+    <a href="#productos" class="mobile-link">Productos</a>
+    <a href="#reparaciones" class="mobile-link">Reparaciones</a>
+    <a href="#envios" class="mobile-link">Envíos</a>
+    <a href="#contacto" class="mobile-link">Contacto</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">✦ Gualeguay, Entre Ríos ✦</p>
+        <h1 class="hero-title">
+          <em>Martin Gonzalez</em>
+          <span class="hero-highlight">Marroquinería & Calzado Artesanal</span>
+        </h1>
+        <p class="hero-subtitle">8 años de oficio | Especialistas en cuero vacuno legítimo de primera calidad</p>
+        <p class="hero-desc">
+          Cuero artesanal del litoral entrerriano. Fabricación de Botas, botines, carteras, cintos y accesorios fabricados a mano con cuero vacuno y de búfalo legítimo. Cada pieza lleva el sello de nuestro oficio.
+        </p>
+        <div class="hero-actions">
+          <a href="#productos" class="btn-primary">Ver catálogo</a>
+          <a href="https://wa.me/549344415448189?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20productos." target="_blank" class="btn-outline">Consultar por WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-deco">
+        <img src="imagenes/logo.webp" alt="Martin Gonzalez Logo" style="width:280px;height:280px;object-fit:contain;border-radius:50%;border:1px solid rgba(201,168,76,0.25);background:rgba(44,74,43,0.4);padding:1.5rem;">
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <div class="section-inner">
+      <div class="productos-header">
+        <p class="section-label">✦ Nuestro catálogo</p>
+        <h2 class="section-title">Catálogo de <em>productos</em></h2>
+      </div>
+
+      <!-- SUBSECCIÓN: CALZADO -->
+      <h3 class="cat-subtitle">— Calzado —</h3>
+      <div class="productos-grid">
+
+        <div class="producto-card">
+          <div class="producto-img" style="background:#E8E8E8;">
+            <img src="imagenes/botasdecampo.webp" alt="Botas de campo hombre" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:contain;object-position:center;padding:1rem;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Botas de campo hombre</h3>
+            <p class="producto-desc">Confeccionadas en cuero vacuno y de búfalo para trabajos y exigencias extremas. Suelas de goma pegadas y cocidas a mano. Forrería interna en cuero badana.</p>
+            <span class="producto-tag">Calzado</span>
+            <div class="producto-talles">Talles: 39 al 45</div>
+            <div class="producto-price">$150.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Botas de campo hombre', '39,40,41,42,43,44,45', 'Talle', 'Negro,Marrón,Marrón chocolate,Bordó,Suela,Consultar por más colores')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Botines de fútbol 5.webp" alt="Botines de fútbol 5" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Botines de fútbol 5</h3>
+            <p class="producto-desc">Fabricados y forrados íntegramente en cuero vacuno. Suelas cocidas a mano. Modelo para Fútbol 5.</p>
+            <span class="producto-tag">Calzado</span>
+            <div class="producto-talles">Talles: 37 al 45</div>
+            <div class="producto-price">$100.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Botines de fútbol 5', '37,38,39,40,41,42,43,44,45')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Botines de fútbol 11.webp" alt="Botines de fútbol 11 (con tapones)" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Botines de fútbol 11 (con tapones)</h3>
+            <p class="producto-desc">Fabricados y forrados íntegramente en cuero vacuno. Suelas cocidas a mano. Con tapones para césped natural.</p>
+            <span class="producto-tag">Calzado</span>
+            <div class="producto-talles">Talles: 37 al 45</div>
+            <div class="producto-price">$100.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Botines de fútbol 11 (con tapones)', '37,38,39,40,41,42,43,44,45')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Borceguíes de dama.webp" alt="Borceguíes de dama" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Borceguíes de dama</h3>
+            <p class="producto-desc">Cuero vacuno legítimo de primera calidad. Forrería interna en cuero badana, blandos y suaves.</p>
+            <span class="producto-tag">Calzado</span>
+            <div class="producto-talles">Talles: 35 al 40</div>
+            <div class="producto-price">$75.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Borceguíes de dama', '35,36,37,38,39,40')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Sandalias.webp" alt="Sandalias" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Sandalias</h3>
+            <p class="producto-desc">Disponibles en talles especiales. Cuero vacuno legítimo con terminaciones artesanales.</p>
+            <span class="producto-tag">Calzado</span>
+            <div class="producto-talles">Talles especiales: 33 al 42</div>
+            <div class="producto-price">$60.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Sandalias', '33,34,35,36,37,38,39,40,41,42')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/alpargatas.webp" alt="Alpargatas" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Alpargatas</h3>
+            <p class="producto-desc">Alpargatas artesanales en cuero vacuno. Forrada interior en cuero badana y posee goma antideslizante. Cómodas, resistentes y con el estilo característico del litoral entrerriano.</p>
+            <span class="producto-tag">Calzado</span>
+            <div class="producto-talles">Talles: 33 al 45</div>
+            <div class="producto-price">$50.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Alpargatas', '33,34,35,36,37,38,39,40,41,42,43,44,45')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end calzado grid -->
+
+      <!-- SUBSECCIÓN: MARROQUINERÍA Y ACCESORIOS -->
+      <h3 class="cat-subtitle" style="margin-top:3rem;">— Marroquinería y Accesorios —</h3>
+      <div class="productos-grid">
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/carteras.webp" alt="Carteras" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Carteras</h3>
+            <p class="producto-desc">Carteras de cuero vacuno hechas a mano. Forro interior en tela. Contiene 2 cierres exteriores y un bolsillo interior con cierre.</p>
+            <span class="producto-tag">Marroquinería</span>
+            <div class="producto-price">$70.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Carteras', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Bandoleras.webp" alt="Bandoleras" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Bandoleras</h3>
+            <p class="producto-desc">Bandoleras artesanales en cuero vacuno legítimo con correas regulables.</p>
+            <span class="producto-tag">Marroquinería</span>
+            <div class="producto-price">$30.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Bandoleras', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Billeteras.webp" alt="Billeteras" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Billeteras</h3>
+            <p class="producto-desc">Billeteras de cuero vacuno con múltiples compartimentos y acabado artesanal.</p>
+            <span class="producto-tag">Marroquinería</span>
+            <div class="producto-price">$18.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Billeteras', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/cintos Clásico Hombre.webp" alt="Cintos Clásicos" onclick="abrirLightbox(this.src,this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Cintos Clásicos</h3>
+            <div class="selector-genero">
+              <button class="btn-genero activo" id="btn-hombre-clasico" onclick="seleccionarGeneroClasico('hombre')">Hombre</button>
+              <button class="btn-genero" id="btn-mujer-clasico" onclick="seleccionarGeneroClasico('mujer')">Mujer</button>
+            </div>
+            <p class="producto-desc" id="desc-cinto-clasico">Cuero vaqueta artesanal · 2,5 a 3mm de espesor · Hebilla clásica · Seleccioná género para ver anchos y largos disponibles.</p>
+            <span class="producto-tag">Cintos</span>
+            <div class="producto-price">$18.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" id="btn-consultar-clasico" onclick="abrirModal('Cintos Clásicos Hombre', '90cm,100cm,110cm,120cm,130cm,140cm,150cm', 'Largo', '', '3cm,3.5cm,4cm')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/cintos Clásico Hebillas chapon.webp" alt="Cintos Chapón" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Cintos Chapón</h3>
+            <div class="selector-genero">
+              <button class="btn-genero activo" id="btn-hombre-chapon" onclick="seleccionarGeneroChapón('hombre')">Hombre</button>
+              <button class="btn-genero" id="btn-mujer-chapon" onclick="seleccionarGeneroChapón('mujer')">Mujer</button>
+            </div>
+            <p class="producto-desc" id="desc-cinto-chapon">Cuero vaqueta artesanal · 2,5 a 3mm de espesor · Hebilla chapón · El largo se consulta.</p>
+            <span class="producto-tag">Cintos</span>
+            <div class="producto-price">$24.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" id="btn-consultar-chapon" onclick="abrirModal('Cintos Chapón Hombre', '90cm,100cm,110cm,120cm,130cm,140cm,150cm', 'Largo', '', '3cm,3.5cm,4cm')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/yuntas.png" alt="Cintos con Yunta" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Cintos con Yunta</h3>
+            <div class="selector-genero">
+              <button class="btn-genero activo" id="btn-hombre-yunta" onclick="seleccionarGeneroYunta('hombre')">Hombre</button>
+              <button class="btn-genero" id="btn-mujer-yunta" onclick="seleccionarGeneroYunta('mujer')">Mujer</button>
+            </div>
+            <p class="producto-desc" id="desc-cinto-yunta">Cuero vaqueta artesanal · 2,5 a 3mm de espesor · Hebilla yunta · El largo se consulta.</p>
+            <span class="producto-tag">Cintos</span>
+            <div class="producto-price">$24.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" id="btn-consultar-yunta" onclick="abrirModal('Cintos con Yunta Hombre', '90cm,100cm,110cm,120cm,130cm,140cm,150cm', 'Largo', '', '3cm,3.5cm,4cm')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/cintosdecampotiradores.webp" alt="Cintos de Campo con Evilla" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Cintos de Campo con Evilla</h3>
+            <p class="producto-desc">Cuero vacuno reforzado · 2mm de espesor · Evilla correntina · Sin rastra — la rastra se vende aparte.</p>
+            <span class="producto-tag">Cintos</span>
+            <div class="producto-price">$40.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Cintos de Campo con Evilla', '90cm,100cm,110cm,120cm,130cm,140cm,150cm', 'Largo', '', '10cm,15cm')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/rastra.png" alt="Rastra Gigante" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Rastra Gigante</h3>
+            <p class="producto-desc">Consultar modelos disponibles.</p>
+            <span class="producto-tag">Cintos</span>
+            <div class="producto-price">$25.000</div>
+            <div class="producto-footer">
+              <a class="btn-consultar" href="https://wa.me/549344415448189?text=Hola%20Martin%2C%20quiero%20consultar%20modelos%20disponibles%20de%20Rastra%20Gigante." target="_blank">Consultar modelos</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img" style="background:#E8E8E8;">
+            <img src="imagenes/portatermo.webp" alt="Porta termos" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:contain;object-position:center;padding:1rem;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Porta termos</h3>
+            <p class="producto-desc">Porta termos artesanal en cuero vaqueta · 3mm de espesor. Resistente y con estilo del litoral entrerriano.</p>
+            <span class="producto-tag">Accesorios</span>
+            <div class="producto-price">$60.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Porta termos', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img" style="background:#E8E8E8;">
+            <img src="imagenes/portatarjetas.webp" alt="Porta tarjetas" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:contain;object-position:center;padding:1rem;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Porta tarjetas</h3>
+            <p class="producto-desc">Porta tarjetas en cuero vacuno. Práctico y elegante para el uso diario.</p>
+            <span class="producto-tag">Accesorios</span>
+            <div class="producto-price">$16.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Porta tarjetas', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/Llaveros.webp" alt="Llaveros" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Llaveros</h3>
+            <p class="producto-desc">Llaveros de cuero vacuno con terminaciones artesanales. Ideales como regalo.</p>
+            <span class="producto-tag">Accesorios</span>
+            <div class="producto-price">$6.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Llaveros', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/collardeperro.webp" alt="Collares de cuero para perros" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Collares de cuero para perros</h3>
+            <p class="producto-desc">Cuero vaqueta · 3mm de espesor · Resistentes y duraderos.</p>
+            <span class="producto-tag">Accesorios</span>
+            <div class="producto-price">$14.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Collares de cuero para perros', 'S,M,L,XL')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="imagenes/portanotebook.webp" alt="Porta notebook" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Porta netbook</h3>
+            <p class="producto-desc">Funda artesanal para netbook en cuero vacuno. Hecha a mano en el litoral entrerriano.</p>
+            <span class="producto-tag">Accesorios</span>
+            <div class="producto-price">$80.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Porta netbook', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <div class="producto-img" style="background:#E8E8E8;">
+            <img src="imagenes/portaagenda.webp" alt="Porta agenda" onclick="abrirLightbox(this.src, this.alt)" style="cursor:zoom-in;width:100%;height:100%;object-fit:contain;object-position:center;padding:1rem;min-height:100%;display:block;">
+          </div>
+          <div class="producto-info">
+            <h3 class="producto-name">Porta agenda</h3>
+            <p class="producto-desc">Cuero napa · Elegante y resistente, hecha a mano en el litoral entrerriano.</p>
+            <span class="producto-tag">Accesorios</span>
+            <div class="producto-price">$25.000</div>
+            <div class="producto-footer">
+              <button class="btn-consultar" onclick="abrirModal('Porta agenda', '')">Consultar</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end marroquineria grid -->
+
+      <div class="catalogo-nota">
+        <p>Los artículos indicados como sin stock son elaborados <strong>bajo pedido</strong>. El tiempo de fabricación es de hasta <strong>15 días hábiles</strong> desde la confirmación del encargo. Para consultas sobre disponibilidad o tiempos de entrega, no dude en contactarnos.</p>
+      </div>
+
+    </div><!-- end section-inner -->
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ENVIOS Y CONDICIONES -->
+  <section id="envios">
+    <div class="envios-inner">
+
+      <div class="envios-header">
+        <p class="section-label">✦ Información de despacho</p>
+        <h2 class="section-title">Envíos & <em>Condiciones</em></h2>
+      </div>
+
+      <div class="envios-carriers">
+
+        <div class="envio-card">
+          <div class="envio-logo-wrap">
+            <img src="imagenes/andreani.webp" alt="Andreani" class="envio-logo">
+          </div>
+          <h3 class="envio-nombre">Andreani</h3>
+          <p class="envio-desc">Envíos a todo el país con seguimiento en línea.</p>
+        </div>
+
+        <div class="envio-card">
+          <div class="envio-logo-wrap">
+            <img src="imagenes/viacargo.webp" alt="Via Cargo" class="envio-logo">
+          </div>
+          <h3 class="envio-nombre">Via Cargo</h3>
+          <p class="envio-desc">Cobertura nacional con amplia red de sucursales.</p>
+        </div>
+
+        <div class="envio-card">
+          <div class="envio-logo-wrap">
+            <img src="imagenes/flechacarga.webp" alt="Flecha Bus Cargas" class="envio-logo">
+          </div>
+          <h3 class="envio-nombre">Flecha Bus Cargas</h3>
+          <p class="envio-desc">Encomiendas vía terminal de ómnibus.</p>
+        </div>
+
+      </div>
+
+      <div class="envios-info-row">
+
+        <div class="envios-info-box">
+          <p class="envios-box-label">✦ Costo de envío</p>
+          <p class="envios-box-text">El costo se calcula según la <strong>ubicación del destinatario</strong>. Consultanos por WhatsApp para obtener una cotización exacta antes de confirmar tu pedido.</p>
+        </div>
+
+        <div class="envios-info-box">
+          <p class="envios-box-label">✦ Tiempos de entrega</p>
+          <p class="envios-box-text">Los trabajos elaborados bajo pedido tienen una demora de <strong>15 días hábiles</strong>. Una vez despachado, el tiempo de tránsito depende del servicio seleccionado y la localidad de destino.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <div class="nosotros-inner">
+    <div class="nosotros-text">
+      <p class="section-label">✦ Nuestra historia</p>
+      <h2 class="section-title">Tradición<br>y <em>oficio</em></h2>
+      <p>
+        Martin Gonzalez Marroquinería & Calzado nació en el corazón de Gualeguay con un sueño claro: llevar el trabajo en cuero a su máxima expresión. Con 8 años de oficio, lo que comenzó como un pequeño taller de reparación de calzado se fue transformando, año a año, en un espacio de creación artesanal que hoy es referencia en Entre Ríos.
+      </p>
+      <p>
+        <strong>Cada pieza que sale de nuestro taller es única.</strong> Trabajamos con cueros seleccionados, técnicas tradicionales y un cuidado especial por los detalles que solo da el trabajo manual. Desde una billetera hasta unas botas, cada producto lleva el sello de nuestra familia.
+      </p>
+      <p>
+        Ubicados sobre la calle San Antonio norte 812, recibimos a vecinos, turistas que llegan desde Buenos Aires, Paraná y Victoria, y a todos aquellos que buscan llevarse algo auténtico del litoral entrerriano: un recuerdo con alma de campo.
+      </p>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Años de oficio</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Hecho a mano</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Piezas únicas</div>
+        </div>
+      </div>
+    </div>
+    <div class="nosotros-visual">
+      <div class="nosotros-card">
+        <p class="nosotros-quote">El cuero tiene memoria. Cada pieza que hacemos guarda el esfuerzo de nuestras manos y la historia de quien la lleva.</p>
+        <p class="nosotros-attr">— Martin Gonzalez, Gualeguay</p>
+      </div>
+    </div>
+    </div><!-- end nosotros-inner -->
+  </section>
+
+  <!-- REPARACIONES -->
+  <section id="reparaciones">
+    <div class="section-inner">
+      <div class="reparaciones-inner">
+        <div class="reparaciones-text">
+          <p class="section-label">✦ Servicio técnico</p>
+          <h2 class="section-title">Reparación de <em>calzado</em></h2>
+          <p>Reparamos todo tipo de calzado con el mismo cuidado de siempre. Traé tus zapatos, zapatillas o botas y les damos nueva vida.</p>
+          <a href="https://wa.me/549344415448189?text=Hola%2C%20quer%C3%ADa%20consultar%20sobre%20reparaci%C3%B3n%20de%20calzado." target="_blank" class="btn-primary" style="margin-top:1rem;">Consultar turno</a>
+        </div>
+      <ul class="reparaciones-list">
+        <li>Reparación de todo tipo de calzados</li>
+        <li>Cambio de cierres en mochilas, bolsos, carteras y botas</li>
+        <li>Punteras y taloneras</li>
+        <li>Cambio de tacos</li>
+        <li>Teñidos de zapatos</li>
+        <li>Costuras de suelas a mano</li>
+        <li>Costuras a mano y a máquina</li>
+        <li>Realces a medida para zapatos ortopédicos</li>
+        <li>Cambio de hebillas en cintos y sandalias</li>
+      </ul>
+      </div><!-- end reparaciones-inner -->
+    </div><!-- end section-inner -->
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-info">
+        <p class="section-label">✦ Encontranos</p>
+        <h2 class="section-title">Visitá<br>nuestro <em>local</em></h2>
+        <p>Estamos en el norte de Gualeguay, sobre calle San Antonio norte 812, frente a farmacia Emilio.</p>
+        <div class="contacto-details">
+          <div class="contacto-item">
+            <div class="contacto-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contacto-item-text">
+              <p class="contacto-item-label">Dirección</p>
+              <p class="contacto-item-val">San Antonio norte 812, Gualeguay, Entre Ríos</p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <div class="contacto-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contacto-item-text">
+              <p class="contacto-item-label">WhatsApp</p>
+              <p class="contacto-item-val">
+                <a href="https://wa.me/549344415448189" target="_blank" style="color:var(--verde-oscuro);text-decoration:none;">3444 15-448189</a>
+              </p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <div class="contacto-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contacto-item-text">
+              <p class="contacto-item-label">Horario</p>
+              <p class="contacto-item-val">Lun a Vie: 9:00 – 13:00 / 16:00 – 20:00<br>Sáb: 9:00 – 13:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contacto-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d835.2549125659589!2d-59.314360756037686!3d-33.13484832794515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b09b6891ba4311%3A0x3fb3292ddd854122!2sSan%20Antonio%20Nte.%20812%2C%20E2840%20Gualeguay%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1771940410328!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          width="100%"
+          height="100%"
+          style="border:0; position:absolute; inset:0; width:100%; height:100%;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--verde-oscuro);z-index:1" id="mapFallback">
+          <div class="map-placeholder">
+            <div class="map-icon">🗺️</div>
+            <p>Gualeguay, Entre Ríos</p>
+            <p style="font-size:0.7rem; opacity:0.4; margin-top:0.3rem;">San Antonio & Shell</p>
+            <a href="https://maps.google.com/?q=Gualeguay,Entre+Rios,Argentina" target="_blank">Ver en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div><!-- end contacto-inner -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      Martin Gonzalez
+      <span>Marroquinería & Calzado · Gualeguay, Entre Ríos</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#reparaciones">Reparaciones</a>
+      <a href="#envios">Envíos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-legal">
+      <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>
+      <span>|</span>
+      <a href="terminos-condiciones.html" target="_blank">Términos y Condiciones</a>
+      <span>|</span>
+      <a href="boton-arrepentimiento.html" target="_blank">Botón de Arrepentimiento</a>
+    </div>
+
+    <p class="footer-copy">© 2026 Martin Gonzalez Marroquinería & Calzado · CUIL: 20-34204634-8</p>
+
+    <p class="footer-wb">Diseño Web: <a href="http://www.wbserviceinformatica.com.ar" target="_blank">WB Service</a></p>
+  </footer>
+
+
+  <!-- MODAL CONSULTA -->
+  <div class="modal-overlay" id="modalConsulta">
+    <div class="modal-box">
+      <button class="modal-close" onclick="cerrarModal()">✕</button>
+      <h3 class="modal-titulo">Consultar producto</h3>
+      <p class="modal-producto-nombre" id="modalProductoNombre"></p>
+
+      <label class="modal-label">Color</label>
+      <select class="modal-select" id="modalColor">
+        <option value="">— Seleccioná un color —</option>
+        <option>Negro</option>
+        <option>Beige</option>
+        <option>Suela</option>
+        <option>Bordó</option>
+        <option>Marrón</option>
+        <option>Marrón chocolate</option>
+        <option>Reptil</option>
+        <option>Azul</option>
+        <option>Gris</option>
+        <option>Blanco</option>
+        <option>Tabaco</option>
+        <option>Cuero engrasado</option>
+        <option>Plateado</option>
+        <option>Dorado</option>
+      </select>
+
+      <div id="modalTalleGroup">
+        <label class="modal-label" id="modalTalleLabel">Talle</label>
+        <select class="modal-select" id="modalTalle">
+          <option value="">— Seleccioná un talle —</option>
+        </select>
+      </div>
+
+      <div id="modalAnchoGroup" style="display:none">
+        <label class="modal-label">Ancho</label>
+        <select class="modal-select" id="modalAncho">
+          <option value="">— Seleccioná un ancho —</option>
+        </select>
+      </div>
+
+      <button class="modal-btn-wa" onclick="enviarWhatsApp()">
+        <svg viewBox="0 0 24 24" fill="white" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+      <div id="lightboxContent"></div>
+      <div class="lightbox-info">
+        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        <p class="lightbox-desc" id="lightboxDesc"></p>
+        <a href="#" class="lightbox-cta" id="lightboxCta" target="_blank">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar talle y color
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX SIMPLE -->
+  <div id="img-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none'">
+    <img id="img-lightbox-img" src="" alt="" style="max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);">
+  </div>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/549344415448189?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20productos." target="_blank">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+
+    /**
+     * Cambia descripción y consulta según género seleccionado en cintos clásicos
+     */
+    function seleccionarGeneroClasico(genero) {
+      const desc = document.getElementById('desc-cinto-clasico');
+      const btnH = document.getElementById('btn-hombre-clasico');
+      const btnM = document.getElementById('btn-mujer-clasico');
+      const btnC = document.getElementById('btn-consultar-clasico');
+      if (genero === 'hombre') {
+        const largos = '90cm,100cm,110cm,120cm,130cm,140cm,150cm';
+        const anchos = '3cm,3.5cm,4cm';
+        desc.textContent = 'Hombre · 2,5 a 3mm de espesor · Anchos: 3cm, 3,5cm y 4cm · Largos: 90 a 150cm.';
+        btnC.onclick = () => abrirModal('Cintos Clásicos Hombre', largos, 'Largo', '', anchos);
+      } else {
+        const largos = '80cm,90cm,100cm,110cm,120cm,130cm,140cm,150cm';
+        const anchos = '2cm,2.5cm,3cm,3.5cm,4cm';
+        desc.textContent = 'Dama · 2,5 a 3mm de espesor · Anchos: 2cm, 2,5cm, 3cm, 3,5cm y 4cm · Largos: 80 a 150cm.';
+        btnC.onclick = () => abrirModal('Cintos Clásicos Dama', largos, 'Largo', '', anchos);
+      }
+      btnH.classList.toggle('activo', genero === 'hombre');
+      btnM.classList.toggle('activo', genero === 'mujer');
+    }
+
+    function seleccionarGeneroChapón(genero) {
+      const btnH = document.getElementById('btn-hombre-chapon');
+      const btnM = document.getElementById('btn-mujer-chapon');
+      const btnC = document.getElementById('btn-consultar-chapon');
+      if (genero === 'hombre') {
+        const largos = '90cm,100cm,110cm,120cm,130cm,140cm,150cm';
+        const anchos = '3cm,3.5cm,4cm';
+        btnC.onclick = () => abrirModal('Cintos Chapón Hombre', largos, 'Largo', '', anchos);
+      } else {
+        const largos = '80cm,90cm,100cm,110cm,120cm,130cm,140cm,150cm';
+        const anchos = '2cm,2.5cm,3cm,3.5cm,4cm';
+        btnC.onclick = () => abrirModal('Cintos Chapón Dama', largos, 'Largo', '', anchos);
+      }
+      btnH.classList.toggle('activo', genero === 'hombre');
+      btnM.classList.toggle('activo', genero === 'mujer');
+    }
+
+    function seleccionarGeneroYunta(genero) {
+      const btnH = document.getElementById('btn-hombre-yunta');
+      const btnM = document.getElementById('btn-mujer-yunta');
+      const btnC = document.getElementById('btn-consultar-yunta');
+      if (genero === 'hombre') {
+        const largos = '90cm,100cm,110cm,120cm,130cm,140cm,150cm';
+        const anchos = '3cm,3.5cm,4cm';
+        btnC.onclick = () => abrirModal('Cintos con Yunta Hombre', largos, 'Largo', '', anchos);
+      } else {
+        const largos = '80cm,90cm,100cm,110cm,120cm,130cm,140cm,150cm';
+        const anchos = '2cm,2.5cm,3cm,3.5cm,4cm';
+        btnC.onclick = () => abrirModal('Cintos con Yunta Dama', largos, 'Largo', '', anchos);
+      }
+      btnH.classList.toggle('activo', genero === 'hombre');
+      btnM.classList.toggle('activo', genero === 'mujer');
+    }
+
+    /**
+     * Abre el lightbox simple con la imagen indicada
+     */
+    function abrirLightbox(src, alt) {
+      const lb = document.getElementById('img-lightbox');
+      document.getElementById('img-lightbox-img').src = src;
+      document.getElementById('img-lightbox-img').alt = alt || '';
+      lb.style.display = 'flex';
+    }
+
+    // Lightbox
+    const WA_BASE = "https://wa.me/549344415448189?text=Hola%20Mart%C3%ADn%2C%20quer%C3%ADa%20consultar%20por%20";
+
+    function openLightbox(imgSrc, title, desc, product, icon) {
+      const overlay = document.getElementById('lightbox');
+      const contentEl = document.getElementById('lightboxContent');
+      const titleEl = document.getElementById('lightboxTitle');
+      const descEl = document.getElementById('lightboxDesc');
+      const ctaEl = document.getElementById('lightboxCta');
+
+      titleEl.textContent = title;
+      descEl.textContent = desc;
+      ctaEl.href = WA_BASE + product;
+
+      if (imgSrc) {
+        contentEl.innerHTML = '<img src="' + imgSrc + '" alt="' + title + '" class="lightbox-img" />';
+      } else {
+        contentEl.innerHTML = '<div class="lightbox-icon-view">' + icon + '</div>';
+      }
+
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Make product images clickable too
+    document.querySelectorAll('.producto-img').forEach(function(imgDiv) {
+      imgDiv.style.cursor = 'zoom-in';
+      imgDiv.addEventListener('click', function() {
+        const zoomBtn = this.closest('.producto-card').querySelector('.btn-zoom');
+        if (zoomBtn) zoomBtn.click();
+      });
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Smooth scroll nav
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Hide map fallback if iframe loads
+    const mapFallback = document.getElementById('mapFallback');
+    if (mapFallback) {
+      const iframe = mapFallback.previousElementSibling;
+      if (iframe) {
+        iframe.addEventListener('load', () => {
+          mapFallback.style.display = 'none';
+        });
+      }
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.producto-card, .reparaciones-list li, .stat-item, .contacto-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    function animateHeroPercent() {
+      const bigNum = document.querySelector('.hero-deco-inner .big-num');
+      if (!bigNum) return;
+      const target = 100;
+      const duration = 4000;
+      const delay = 1400;
+      const smoothstep = x => x * x * (3 - 2 * x);
+
+      bigNum.textContent = '0%';
+
+      function update(now) {
+        const elapsed = Math.min(duration, now - startTime);
+        const progress = Math.max(0, Math.min(1, elapsed / duration));
+        const current = Math.round(target * smoothstep(progress));
+        bigNum.textContent = current + '%';
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      let startTime = 0;
+      setTimeout(() => {
+        requestAnimationFrame(time => {
+          startTime = time;
+          update(time);
+        });
+      }, delay);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', animateHeroPercent);
+    } else {
+      animateHeroPercent();
+    }
+
+    // Modal de consulta
+    function abrirModal(producto, tallesStr, etiqueta, coloresStr, anchosStr) {
+      document.getElementById('modalProductoNombre').textContent = producto;
+      const talleGroup = document.getElementById('modalTalleGroup');
+      const talleSelect = document.getElementById('modalTalle');
+      const talleLabel = document.getElementById('modalTalleLabel');
+      const label = etiqueta || 'Talle';
+      talleLabel.textContent = label;
+      talleSelect.innerHTML = `<option value="">— Seleccioná ${label === 'Largo' ? 'un largo' : 'un talle'} —</option>`;
+
+      if (tallesStr && tallesStr.trim() !== '') {
+        tallesStr.split(',').forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t.trim();
+          opt.textContent = t.trim();
+          talleSelect.appendChild(opt);
+        });
+        talleGroup.style.display = 'block';
+      } else {
+        talleGroup.style.display = 'none';
+      }
+
+      // Select de ancho
+      const anchoGroup = document.getElementById('modalAnchoGroup');
+      const anchoSelect = document.getElementById('modalAncho');
+      anchoSelect.innerHTML = '<option value="">— Seleccioná un ancho —</option>';
+      if (anchosStr && anchosStr.trim() !== '') {
+        anchosStr.split(',').forEach(a => {
+          const opt = document.createElement('option');
+          opt.value = a.trim();
+          opt.textContent = a.trim();
+          anchoSelect.appendChild(opt);
+        });
+        anchoGroup.style.display = 'block';
+      } else {
+        anchoGroup.style.display = 'none';
+      }
+
+      // Colores dinámicos: si se pasan, reemplaza el select; si no, muestra lista completa
+      const colorSelect = document.getElementById('modalColor');
+      colorSelect.innerHTML = '<option value="">— Seleccioná un color —</option>';
+      if (coloresStr && coloresStr.trim() !== '') {
+        coloresStr.split(',').forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c.trim();
+          opt.textContent = c.trim();
+          colorSelect.appendChild(opt);
+        });
+      } else {
+        ['Negro','Beige','Suela','Bordó','Marrón','Marrón chocolate','Reptil','Azul','Gris','Blanco','Tabaco','Cuero engrasado','Plateado','Dorado'].forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c;
+          opt.textContent = c;
+          colorSelect.appendChild(opt);
+        });
+      }
+
+      document.getElementById('modalConsulta').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('modalConsulta')._producto = producto;
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalConsulta').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function enviarWhatsApp() {
+      const producto = document.getElementById('modalConsulta')._producto;
+      const color = document.getElementById('modalColor').value;
+      const talle = document.getElementById('modalTalle').value;
+      const ancho = document.getElementById('modalAncho').value;
+      const talleGroup = document.getElementById('modalTalleGroup');
+      const anchoGroup = document.getElementById('modalAnchoGroup');
+      const hasTalle = talleGroup.style.display !== 'none';
+      const hasAncho = anchoGroup.style.display !== 'none';
+
+      if (!color) { alert('Por favor seleccioná un color.'); return; }
+      if (hasTalle && !talle) { alert('Por favor seleccioná un largo.'); return; }
+      if (hasAncho && !ancho) { alert('Por favor seleccioná un ancho.'); return; }
+
+      const talleLabel = document.getElementById('modalTalleLabel').textContent;
+      let msg = `Hola Martin, quiero consultar por ${producto}. Color: ${color}`;
+      if (hasTalle && talle) msg += `, ${talleLabel}: ${talle}`;
+      if (hasAncho && ancho) msg += `, Ancho: ${ancho}`;
+      msg += `. ¿Podés darme más información?`;
+
+      const url = `https://wa.me/549344415448189?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+
+    document.getElementById('modalConsulta').addEventListener('click', function(e) {
+      if (e.target === this) cerrarModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        cerrarModal();
+        closeLightbox();
+        document.getElementById('img-lightbox').style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- SEO: Datos estructurados JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Martín González — Marroquinería & Calzado Artesanal",
+    "description": "Fabricación y reparación de artículos de marroquinería y calzado artesanal en cuero. Carteras, cinturones, zapatos y accesorios hechos a mano.",
+    "url": "https://martingonzalezcueros.com.ar/",
+    "telephone": "+543444154448189",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "San Antonio Norte 812",
+      "addressLocality": "Gualeguay",
+      "addressRegion": "Entre Ríos",
+      "postalCode": "2840",
+      "addressCountry": "AR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:30",
+        "closes": "12:15"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "16:00",
+        "closes": "20:00"
+      }
+    ],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "addressCountry": "AR",
+      "addressRegion": "Entre Ríos",
+      "addressLocality": "Gualeguay"
+    },
+    "priceRange": "$$",
+    "currenciesAccepted": "ARS",
+    "paymentAccepted": "Efectivo, Transferencia"
+  }
+  </script>
+</body>
+</html>
